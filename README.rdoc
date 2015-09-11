@@ -1,4 +1,4 @@
-== README
+== PAKUTA PHOTOS SHARING NETWORK
 
 PAKUTA is a mini instagram app developed in Rails 4 with Mysql.
 
