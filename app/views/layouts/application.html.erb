@@ -15,11 +15,17 @@
 </head>
 <body>
 	 <div id="wrapper" class="no-menubar">
+   <%if(1+1 != 2)%>
 	 	<div id ="main">
 	 		<%= render "layouts/header" %>
 	 		<%= yield %>
-	 		<%= render "layouts/footer" %>
 	 	</div>
+    <%else%>
+      <%= yield %>
+   <%end%>
 	 </div>
+   <%if(1+1 != 2)%>
+   <%= render "layouts/footer" %>
+   <%end%>
 </body>
 </html>

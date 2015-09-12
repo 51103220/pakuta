@@ -3,10 +3,19 @@
       <div class="container">
          <div class="row">
             <div class="col-md-2 tm-logo">
-               <img src="assets/img/logo_white.png" class="logo" alt="Logo">
-               <p class="tm-site-descr">Multipurpose Portfolio</p>
+               <%= image_tag("logo_white.png", :alt => "Pakuta") %>
+               <p class="tm-site-descr">Set you pictures on fire</p>
             </div>
-            <div class="col-md-10 tm-menu">
+            <div class="col-md-2 tm-menu">
+               <div class="comment-form">
+                  <form role="form" class="contact-form">
+                     <div class="form-group">
+                     <input class="form-control" type="text" id="input_message" placeholder="Search">
+                     </div>
+                  </form>
+               </div>
+            </div>
+            <div class="col-md-8 tm-menu">
                <nav>
                   <ul class="top-main-menu mtmenu">
                      <li class="menu-item-has-children">
@@ -18,74 +27,7 @@
                            <li><a href="top-menu-home-2.html">Home v4 - Top Menu / Layer Slider</a></li>
                         </ul>
                      </li>
-                     <li class="menu-item-has-children">
-                        <a>Gallery</a>
-                        <ul class="dropdown">
-                           <li><a href="home-col3.html">Gallery 3 Column Grid</a></li>
-                           <li><a href="home.html">Gallery 4 Column Grid</a></li>
-                           <li><a href="home-col5.html">Gallery 5 Column Grid</a></li>
-                           <li><a href="home-masonry.html">Gallery Masonry Grid</a></li>
-                           <li><a href="home-pinterest-style.html">Gallery Pinterest Style</a></li>
-                           <li><a href="single-work-full-1.html">Single Work Full Width v1</a></li>
-                           <li><a href="single-work-full-2.html">Single Work Full Width v2</a></li>
-                           <li><a href="top-menu-single-work-with-description.html">Single Work with Description</a></li>
-                           <li><a href="single-work-thumbnails.html">Single Work with Thumbnails</a></li>
-                           <li><a href="single-video-full.html">Single Work - Video</a></li>
-                           <li><a href="single-vimeo-full.html">Single Work - Vimeo</a></li>
-                        </ul>
-                     </li>
-                     <li><a href="top-menu-about-us.html">About Us</a></li>
-                     <li><a href="top-menu-services.html">Services</a></li>
-                     <li class="menu-item-has-children">
-                        <a>Blog</a>
-                        <ul class="dropdown">
-                           <li><a href="top-menu-blog-sidebar.html">Blog with Sidebar</a></li>
-                           <li><a href="top-menu-blog-masonry.html">Blog Masonry</a></li>
-                           <li><a href="top-menu-single-post.html">Blog Single Post</a></li>
-                           <li><a href="top-menu-single-post-sidebar.html">Blog Single Post with Sidebar</a></li>
-                        </ul>
-                     </li>
-                     <li><a href="top-menu-shortcodes.html">Shortcodes</a></li>
-                     <li><a href="top-menu-contact.html">Contact</a></li>
-                     <li>
-                        <a href="contact.html">Feedback</a>
-                        <div class="megamenu full-width">
-                           <div class="row">
-                              <div class="col-sm-6" style="text-align: justify">
-                                 <h4>Aliquam</h4>
-                                 <p>
-                                    Aliquam erat volutpat. Nulla nec justo dui. Aeneanoi atet accumsan egestas tortor at lacinia. 
-                                    Pellentesque netus habitant morbi tristique senectus et netus etor egestasio malesuada fames
-                                    ac turpis egestas.  
-                                 </p>
-                                 <h4>Lorem ipsum</h4>
-                                 <p>
-                                    Lorem ipsum dolor sit amet, consectetur meti facilisi a adipiscing elit. Amet
-                                    Curabitur nec lorem alty amet massalit fermentum massa eti. Nulla facilisi. 
-                                    Phasellus in rutrum felis. 
-                                 </p>
-                              </div>
-                              <div class="col-sm-6">
-                                 <h4>Contact Us</h4>
-                                 <form role="form" class="contact-form">
-                                    <div class="form-group">
-                                       <label class="sr-only" for="input_name_mega">input_name_footer *</label>
-                                       <input type="text" class="form-control" id="input_name_mega" placeholder="Name *">
-                                    </div>
-                                    <div class="form-group">
-                                       <label class="sr-only" for="input_email_mega">Email *</label>
-                                       <input type="email" class="form-control" id="input_email_mega" placeholder="Email *">
-                                    </div>
-                                    <div class="form-group">
-                                       <label class="sr-only" for="input_message_mega">Message</label>
-                                       <textarea class="form-control" rows="4" id="input_message_mega" placeholder="Message"></textarea>
-                                    </div>
-                                    <button type="submit" class="btn btn-default btn-wide">Send</button>
-                                 </form>
-                              </div>
-                           </div>                  
-                        </div>
-                     </li>
+                     <li><a href="top-menu-about-us.html">Profile</a></li>
                   </ul> <!-- top-main-menu -->
                </nav>
             </div>

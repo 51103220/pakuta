@@ -1,2 +1,118 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
+#header.top-menu {
+	border-bottom : 1px solid #edeeee;
+}
+.section.st-invert, .section.st-invert, #footer {
+	background-color: #ffffff !important;
+}
+.comments.cm-invert ul > li {
+	border-top-color : #edeeee !important;
+}
+.section.st-black {
+	padding-top: 0px !important;
+}
+.section.st-invert {
+	padding-bottom: 0px !important;
+}
+.st-invert .comment-form .form-control {
+	background-color: #edeeee !important;
+    border: 1px solid #000 !important;
+    color: #000 !important;
+}
+.container-800 {
+	background-color :#edeeee ;
+}
+.st-invert .owner figure {
+	float:left;
+	width:30px;
+	height:30px;
+	margin-right:5px;
+}
+.st-invert .owner .name {
+	float:left;
+}
+.st-invert .owner .time {
+	float: right;
+}
+.st-invert .owner {
+	margin-bottom: 15px;
+	margin-top: 15px;
+}
+.gallery {
+	background-color:#fff !important;
+}
+html, body {
+	height: 100%;
+}
+#wrapper {
+	min-height: 100%;
+	height: auto !important;
+	height: 100%;
+	background-color:#ffffff !important;
+}
+.pakuta .background{
+	position: absolute;
+    z-index: 0;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 1.0;
+    overflow: hidden;
+
+}
+.pakuta h1 {
+	color: #fff !important;
+}
+.pakuta .form-control{
+	box-shadow: none;
+    height: 50px;
+    margin-bottom: 0px;
+    padding: 4px 18px;
+    vertical-align: middle;
+    -webkit-border-radius: 0;
+    border-radius: 0;
+    border: 1px solid #e5e5e5;
+    background-color: transparent;
+    font-size: 16px;
+    border-radius: 5px;
+    border-color: #fff;
+    color: #ffffff;
+
+}
+
+.pakuta input::-webkit-input-placeholder { /* WebKit, Blink, Edge */
+    color:    #fff !important;
+}
+input:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+   color:    #fff !important;
+   opacity:  1;
+}
+input::-moz-placeholder { /* Mozilla Firefox 19+ */
+   color:    #fff !important;
+   opacity:  1;
+}
+input:-ms-input-placeholder { /* Internet Explorer 10-11 */
+   color:    #fff !important;
+}
+input[placeholder]:focus { 
+	background-color: transparent !important; 
+}
+
+.dedo-btn {
+	margin-left: 40%;
+	font-size: 14px;
+    font-weight: 300;
+    border: 1px solid #2b8bc9 !important;
+    border-radius: 5px !important;
+    color: #ffffff !important;
+    padding: 14px 21px;
+    line-height: 1;
+    letter-spacing: 0px;
+    text-transform: uppercase;
+    background-color: #2b8bc9 !important;
+    &:hover {
+    	background-color: #000 !important;
+    }
+}
