@@ -3,7 +3,7 @@
       <div class="container">
          <div class="row">
             <div class="col-md-2 tm-logo">
-               <%= image_tag("logo_white.png", :alt => "Pakuta") %>
+               <a href="/"><%= image_tag("logo_white.png", :alt => "Pakuta") %></a>
                <p class="tm-site-descr">Set you pictures on fire</p>
             </div>
             <div class="col-md-2 tm-menu">
@@ -18,16 +18,13 @@
             <div class="col-md-8 tm-menu">
                <nav>
                   <ul class="top-main-menu mtmenu">
-                     <li class="menu-item-has-children">
-                        <a href="home-expanding-preview.html">Home</a>
-                        <ul class="dropdown">
-                           <li><a href="home.html">Home v1 - Sidebar Menu / Gallery</a></li>
-                           <li><a href="top-menu-onepage.html">Home v2 - OnePage</a></li>
-                           <li><a href="top-menu-home-1.html">Home v3 - Top Menu / Video Background</a></li>
-                           <li><a href="top-menu-home-2.html">Home v4 - Top Menu / Layer Slider</a></li>
-                        </ul>
-                     </li>
-                     <li><a href="top-menu-about-us.html">Profile</a></li>
+                     <% if logged_in? %>
+                        <li><%=link_to "Profile",controller: 'users', action: 'show' , name:current_user.name%></li>
+                        <li><%= link_to "Log out", logout_path, method: "delete" %></li>
+                     <% else %>
+                        <li><%=link_to "Login", login_path%></li>
+                        <li><%=link_to "Signup", signup_path%></li>
+                     <% end %>
                   </ul> <!-- top-main-menu -->
                </nav>
             </div>

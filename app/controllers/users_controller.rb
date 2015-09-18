@@ -9,8 +9,9 @@ class UsersController < ApplicationController
 	def create
 	    @user = User.new(user_params)    # Not the final implementation!
 	    if @user.save
+	    	log_in @user
 	    	flash[:success] = "Now You are a Pakuta !!!"
-	     	redirect_to action: "show", name: @user.name 
+	     	redirect_to controller: "home_page", action: "home" 
 	    else
 	      	render 'new'
 	    end
