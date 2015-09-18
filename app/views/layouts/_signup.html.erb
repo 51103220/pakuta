@@ -1,0 +1,36 @@
+<div class="section-group pakuta">
+	<%= image_tag("subscribe.jpg", :alt => "Pakuta", :class=>"background") %>
+	<div class="section">
+		<section>
+			<div class="container">
+				<div class="row">
+					<div class="col-md-6">
+						<h1 id="slogan">Take a Coffee and Pakuta</h1>
+					</div>
+					<div class="col-md-6">
+						<%= form_for(user) do |f| %>
+						<%= render :partial => 'layouts/error_messages', :locals => {:user => user } %>
+						<div class="form-group">
+						<%= f.label :name %>
+						<%= f.text_field :name,:value =>"", :placeholder => "Honestly, Choose a unique name...",:class =>"form-control" %>
+						</div>
+						<div class="form-group">
+						<%= f.label :email %>						
+						<%= f.email_field :email, :value =>"", :placeholder => "We will identify...",:class =>"form-control" %>
+						</div>
+						<div class="form-group">
+						<%= f.label :password %>
+						<%= f.password_field :password,:class =>"form-control" %>
+						</div>
+						<div class="form-group">
+						<%= f.label :password_confirmation, "Confirmation" %>
+						<%= f.password_field :password_confirmation,:class =>"form-control" %>
+						</div>
+						<%= f.submit "Now Pakuta !", class: "btn btn-primary dedo-btn" %>
+						<% end %>
+					</div>
+				</div>
+			</div>
+		</section>
+	</div>
+</div>

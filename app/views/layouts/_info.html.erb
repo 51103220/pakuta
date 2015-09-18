@@ -7,14 +7,13 @@
                   <div class="row services-block">
                      <div class="col-md-6" data-animate="fadeInDown">
                         <div class="services-item">
-                           <h5>Profile Picture</h5>
-                           <p>We are team of creative photographers</p>
+                           <%= image_tag user.avatar_url, alt: "#{user.name}" %>
                         </div>
                      </div>
                      <div class="col-md-6" data-animate="fadeInDown">
                         <div class="services-item">
-                           <h5>Name</h5>
-                           <p>We are team of creative photographers. We passionate with photography and other creative things.</p>
+                           <h5><%=user.name%></h5>
+                           <p><%= user.real_name%></p>
                         </div>
                      </div>
                   </div>

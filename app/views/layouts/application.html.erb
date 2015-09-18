@@ -18,11 +18,18 @@
    <%if(1+1 != 2)%>
 	 	<div id ="main">
 	 		<%= render "layouts/header" %>
+       <% flash.each do |message_type, message| %>
+        <div class="alert alert-<%= message_type %>"><%= message %></div>
+      <% end %>
 	 		<%= yield %>
 	 	</div>
     <%else%>
+     <% flash.each do |message_type, message| %>
+        <div class="alert alert-<%= message_type %>"><%= message %></div>
+      <% end %>
       <%= yield %>
    <%end%>
+    <%= debug(params) if Rails.env.development? %>
 	 </div>
    <%if(1+1 != 2)%>
    <%= render "layouts/footer" %>
