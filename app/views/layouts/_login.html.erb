@@ -18,6 +18,12 @@
 						<%= f.label :password %>
 						<%= f.password_field :password,:class =>"form-control" %>
 						</div>
+						<div class="form-group">
+						<%= f.label :remember_me do %>
+  						<%= f.check_box :remember_me %>
+  							<span>Stay with Pakuta for over a decade</span>
+  						<%end%>
+  						</div>
 						<%= f.submit "Let's Pakuta !", class: "btn btn-primary dedo-btn" %>
 						<% end %>
 						<p>Want to be a pakuta ? <%= link_to "Register!", signup_path %></p>

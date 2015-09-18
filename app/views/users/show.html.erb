@@ -2,5 +2,8 @@
  		Pakuta <%=@user.name%>
 <% end %>
 <%= render "layouts/header" %>
+<% flash.each do |message_type, message| %>
+    	<div class="alert alert-<%= message_type %>"><%= message %></div>
+<% end %>
 <%= render :partial => 'layouts/info', :locals => {:user => @user } %>
 <%= render 'layouts/gallery' %>
