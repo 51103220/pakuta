@@ -1,0 +1,13 @@
+content = "<li>"+"<div class='cm-item'>"+"<figure>"+ 
+		  "<img alt='<%=@name%>' src='<%=@avatar%>'>"+
+		  "</figure>"+
+		  "<div class='cm-body'>"+
+		  "<div class='cm-title-line'>"+
+		  "<span class='cm-title'><%= escape_javascript link_to @name, controller: 'users', action: 'show' , name: @name %> </span>"+
+		  "<time datetime='pakuta'><%=@comment.created_at%></time>"+
+		  "</div>"+
+		  "<div class='cm-content'>"+
+		  "<p><%=@comment.content%></p>"+
+		  "</div></div></li>";
+$("#comments_list_<%=@comment.post_id%>").append(content);
+$(".comment-form form #content").val(''); 

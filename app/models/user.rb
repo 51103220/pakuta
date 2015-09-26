@@ -1,5 +1,6 @@
 class User < ActiveRecord::Base
 	attr_accessor :remember_token
+	has_many :posts, dependent: :destroy
 	before_save { self.email = email.downcase }
 	before_save { self.name = name.downcase }
 	VALID_NAME_REGEX = /\A[a-zA-Z0-9_]+\z/i
@@ -8,7 +9,7 @@ class User < ActiveRecord::Base
 	VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
 	validates :email, presence: true, length: { maximum: 50 }, 
 			format: { with: VALID_EMAIL_REGEX }, uniqueness: { case_sensitive: false }
-	validates :password, presence: true, length: { minimum: 6 }
+	validates :password, presence: true, length: { minimum: 6 }, allow_nil: true
 	has_secure_password
 	
 	def User.digest(string)
@@ -30,5 +31,7 @@ class User < ActiveRecord::Base
 	def forget
     	update_attribute(:remember_digest, nil)
  	end
-
+ 	def posts user_id
+ 		@posts = Post.order(created_at: :desc).where(user_id: user_id) 
+ 	end
 end

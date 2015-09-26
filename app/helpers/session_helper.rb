@@ -32,4 +32,14 @@ module SessionHelper
 		cookies.permanent.signed[:user_id] = user.id
 		cookies.permanent[:remember_token] = user.remember_token
 	end
+	def timestamp created_at
+  		t = ((Time.now - created_at.to_datetime)/3600)
+  		if t < 1
+  			t = (t*60).ceil.to_s + " minutes ago"
+  		elsif t.floor == 1
+  			t = t.floor.to_s + " hour ago"
+  		else
+  			t = t.floor.to_s + " hours ago"
+  		end
+  	end
 end

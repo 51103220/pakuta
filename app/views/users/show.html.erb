@@ -6,4 +6,4 @@
     	<div class="alert alert-<%= message_type %>"><%= message %></div>
 <% end %>
 <%= render :partial => 'layouts/info', :locals => {:user => @user } %>
-<%= render 'layouts/gallery' %>
+<%= render :partial => 'layouts/gallery', :locals => {:user => @user } %>

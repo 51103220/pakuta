@@ -9,9 +9,12 @@ Rails.application.routes.draw do
     resources :users
     get 'u/:name' => 'users#show'
     get 'signup' => 'users#new'
+    get 'u/:name/edit' => 'users#edit'
     get    'login'   => 'session#new'
     post   'login'   => 'session#create'
     delete 'logout'  => 'session#destroy'
+    post 'upload' => 'post#create'
+    post 'comment' => 'comment#create'
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 

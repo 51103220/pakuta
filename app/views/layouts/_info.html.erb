@@ -14,6 +14,7 @@
                         <div class="services-item">
                            <h5><%=user.name%></h5>
                            <p><%= user.real_name%></p>
+                           <%=link_to "Edit your profile", controller:'users', action: 'edit' , name: user.name %></li>
                         </div>
                      </div>
                   </div>

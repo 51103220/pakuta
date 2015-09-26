@@ -1,175 +1,71 @@
 <div class="section gallery st-invert no-padding">
    <div class="closeImg-btn"></div>
-   <img class="nextImg-btn" src="http://i.imgur.com/KsmZp2X.png" />
-   <img class="prevImg-btn" src="http://i.imgur.com/KsmZp2X.png" />
+   <img class="nextImg-btn" src="https://cdn1.iconfinder.com/data/icons/fs-icons-ubuntu-by-franksouza-/512/go-next.png" />
+   <img class="prevImg-btn" src="https://cdn1.iconfinder.com/data/icons/fs-icons-ubuntu-by-franksouza-/512/go-next.png" />
    <div class="container container-800">
-               <section>
-                  <ul id="gallery-w-preview" class="gallery gl-cols-4 gl-fixed-items">
-                     <li class="gl-item gl-fixed-ratio-item gl-loading" data-category="people">
-                        <a href="#">
-                           <figure>
-                              <img src="http://d.azelab.com/mental/Demo/images/hqdefault.jpg" alt="">
-                              <figcaption>
-                                 <div class="middle"><div class="middle-inner">
-                                    <p class="gl-item-icon"><i class="fa fa-play-circle-o"></i></p>
-                                    <p class="gl-item-title">Youtube</p>
-                                    <p class="gl-item-category">People</p>
-                                 </div></div>
-                              </figcaption>
-                           </figure>
-                        </a>
-                        <div class="gl-preview" data-category="people">
-                           
-                           <a href="#" class="glp-close"></a>
-                           <div class="row gl-preview-container">
-                              <div class="col-sm-8">
-                                 <div class="glp-video">
-                                    <iframe src="http://www.youtube.com/embed/mOtI-gv1E1Y?rel=0" frameborder="0" allowfullscreen></iframe>
+      <section>
+         <ul id="gallery-w-preview" class="gallery gl-cols-4 gl-fixed-items">
+            <% user.posts(user.id).each do |p| %>
+            <li class="gl-item gl-fixed-ratio-item gl-loading" data-category="people">
+               <%= link_to "#", :remote => true do %>
+               <figure>
+                  <%= image_tag(p.img_url, :alt => user.name) %>
+                  <figcaption>
+                     <div class="middle"><div class="middle-inner">
+                        <p class="gl-item-category"><%=  pluralize(p.comments(p.id).length, "Comment")%></p>
+                     </div></div>
+                  </figcaption>
+               </figure>
+               <% end %>
+               <div class="container gl-preview" data-category="people">
+
+                  <a href="#" class="glp-close"></a>
+                  <div class="row gl-preview-container">
+                     <div class="col-sm-8">
+                        <figure class="main-pic">
+                          <%= image_tag(p.img_url, :alt => user.name) %>
+                       </figure>
+                    </div>
+                    <div class="col-sm-4 lg-preview-descr">
+                     <h4><%=user.name%></h4>
+                     <p><%=p.created_at%></p>
+                     <h6><%=p.caption%></h6>
+                     <ul id ="comments_list_<%=p.id%>">
+                        <% p.comments(p.id).each do |c| %>
+                        <li>
+                          <div class="cm-item">                                   
+                             <figure>
+                                <%= image_tag(c.commentator(c.user_id).avatar_url, :alt => c.commentator(c.user_id).name) %>
+                             </figure>
+
+                             <div class="cm-body">
+                                 <div class="cm-title-line">
+                                    <%= link_to c.commentator(c.user_id).name, controller: 'users', action: 'show' , name:c.commentator(c.user_id).name%>    
+                                    <time datetime="2014-01-27"><%=c.created_at%></time>
+                                 </div>
+                                 <div class="cm-content">
+                                    <p><%=c.content%></p>
                                  </div>
                               </div>
-                              <div class="col-sm-4 lg-preview-descr">
-                                 <h4>Girl in the street</h4>
-                                 <p>We are team of creative photographers. We passionate with photography and other creative things. If you are looking professional photography theme with endless possibilities, you come in right place. This template consist of well-organized layers. Tons of features waiting for you. </p>
-                                 <p>We are team of creative photographers. We passionate with photography and other creative things. If you are looking professional photography theme with endless possibilities, you come in right place. This template consist of well-organized layers. Tons of features waiting for you. </p>
-                                 <button class="btn btn-primary glp-readmore">Read More</button>
-                                 <div class="mb-social glp-social">
-                                    <p>Share</p>
-                                    <a href="#"><i class="fa fa-twitter"></i></a>
-                                    <a href="#"><i class="fa fa-facebook"></i></a>
-                                    <a href="#"><i class="fa fa-google-plus"></i></a>
-                                    <a href="#"><i class="fa fa-instagram"></i></a>
-                                    <a href="#"><i class="fa fa-pinterest"></i></a>
-                                    <a href="#"><i class="fa fa-tumblr"></i></a>
-                                 </div>
-                              </div>
-                           </div>
-                        </div> <!-- gl-preview -->
+                        </div>
                      </li>
-                     <li class="gl-item gl-fixed-ratio-item gl-loading" data-category="people">
-                        <a href="#">
-                           <figure>
-                              <img src="http://d.azelab.com/mental/Demo/images/hqdefault.jpg" alt="">
-                              <figcaption>
-                                 <div class="middle"><div class="middle-inner">
-                                    <p class="gl-item-icon"><i class="fa fa-play-circle-o"></i></p>
-                                    <p class="gl-item-title">Youtube</p>
-                                    <p class="gl-item-category">People</p>
-                                 </div></div>
-                              </figcaption>
-                           </figure>
-                        </a>
-                        <div class="gl-preview"  data-category="people">
-                           
-                           <a href="#" class="glp-close"></a>
-                           <div class="row gl-preview-container">
-                              <div class="col-sm-8">
-                                 <div class="glp-video">
-                                    <iframe src="http://www.youtube.com/embed/mOtI-gv1E1Y?rel=0" frameborder="0" allowfullscreen></iframe>
-                                 </div>
-                              </div>
-                              <div class="col-sm-4 lg-preview-descr">
-                                 <h4>Girl in the street</h4>
-                                 <p>We are team of creative photographers. We passionate with photography and other creative things. If you are looking professional photography theme with endless possibilities, you come in right place. This template consist of well-organized layers. Tons of features waiting for you. </p>
-                                 <p>We are team of creative photographers. We passionate with photography and other creative things. If you are looking professional photography theme with endless possibilities, you come in right place. This template consist of well-organized layers. Tons of features waiting for you. </p>
-                                 <button class="btn btn-primary glp-readmore">Read More</button>
-                                 <div class="mb-social glp-social">
-                                    <p>Share</p>
-                                    <a href="#"><i class="fa fa-twitter"></i></a>
-                                    <a href="#"><i class="fa fa-facebook"></i></a>
-                                    <a href="#"><i class="fa fa-google-plus"></i></a>
-                                    <a href="#"><i class="fa fa-instagram"></i></a>
-                                    <a href="#"><i class="fa fa-pinterest"></i></a>
-                                    <a href="#"><i class="fa fa-tumblr"></i></a>
-                                 </div>
-                              </div>
-                           </div>
-                        </div> <!-- gl-preview -->
-                     </li>
-                     <li class="gl-item gl-fixed-ratio-item gl-loading" data-category="people">
-                        <a href="#">
-                           <figure>
-                              <img src="http://i.vimeocdn.com/video/475287645_640.jpg" alt="">
-                              <figcaption>
-                                 <div class="middle"><div class="middle-inner">
-                                    <p class="gl-item-icon"><i class="fa fa-play-circle-o"></i></p>
-                                    <p class="gl-item-title">Vimeo</p>
-                                    <p class="gl-item-category">People</p>
-                                 </div></div>
-                              </figcaption>
-                           </figure>
-                        </a>
-                        <div class="gl-preview"  data-category="people">
-                           
-                           <a href="#" class="glp-close"></a>
-                           <div class="row gl-preview-container">
-                              <div class="col-sm-8">
-                                 <div class="glp-video">
-                                    <iframe src="http://player.vimeo.com/video/95384593" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
-                                 </div>
-                              </div>
-                              <div class="col-sm-4 lg-preview-descr">
-                                 <h4>Girl in the street</h4>
-                                 <p>We are team of creative photographers. We passionate with photography and other creative things. If you are looking professional photography theme with endless possibilities, you come in right place. This template consist of well-organized layers. Tons of features waiting for you. </p>
-                                 <p>We are team of creative photographers. We passionate with photography and other creative things. If you are looking professional photography theme with endless possibilities, you come in right place. This template consist of well-organized layers. Tons of features waiting for you. </p>
-                                 <button class="btn btn-primary glp-readmore">Read More</button>
-                                 <div class="mb-social glp-social">
-                                    <p>Share</p>
-                                    <a href="#"><i class="fa fa-twitter"></i></a>
-                                    <a href="#"><i class="fa fa-facebook"></i></a>
-                                    <a href="#"><i class="fa fa-google-plus"></i></a>
-                                    <a href="#"><i class="fa fa-instagram"></i></a>
-                                    <a href="#"><i class="fa fa-pinterest"></i></a>
-                                    <a href="#"><i class="fa fa-tumblr"></i></a>
-                                 </div>
-                              </div>
-                           </div>
-                        </div> <!-- gl-preview -->
-                     </li>
-                     <li class="gl-item gl-fixed-ratio-item gl-loading" data-category="people">
-                        <a href="#">
-                           <figure>
-                              <img src="http://d.azelab.com/mental/Demo/images/hqdefault.jpg" alt="">
-                              <figcaption>
-                                 <div class="middle"><div class="middle-inner">
-                                    <p class="gl-item-icon"><i class="fa fa-play-circle-o"></i></p>
-                                    <p class="gl-item-title">Youtube</p>
-                                    <p class="gl-item-category">People</p>
-                                 </div></div>
-                              </figcaption>
-                           </figure>
-                        </a>
-                        <div class="gl-preview" data-category="people">
-                           
-                           <a href="#" class="glp-close"></a>
-                           <div class="row gl-preview-container">
-                              <div class="col-sm-8">
-                                 <div class="glp-video">
-                                    <iframe src="http://www.youtube.com/embed/mOtI-gv1E1Y?rel=0" frameborder="0" allowfullscreen></iframe>
-                                 </div>
-                              </div>
-                              <div class="col-sm-4 lg-preview-descr">
-                                 <h4>Girl in the street</h4>
-                                 <p>We are team of creative photographers. We passionate with photography and other creative things. If you are looking professional photography theme with endless possibilities, you come in right place. This template consist of well-organized layers. Tons of features waiting for you. </p>
-                                 <p>We are team of creative photographers. We passionate with photography and other creative things. If you are looking professional photography theme with endless possibilities, you come in right place. This template consist of well-organized layers. Tons of features waiting for you. </p>
-                                 <button class="btn btn-primary glp-readmore">Read More</button>
-                                 <div class="mb-social glp-social">
-                                    <p>Share</p>
-                                    <a href="#"><i class="fa fa-twitter"></i></a>
-                                    <a href="#"><i class="fa fa-facebook"></i></a>
-                                    <a href="#"><i class="fa fa-google-plus"></i></a>
-                                    <a href="#"><i class="fa fa-instagram"></i></a>
-                                    <a href="#"><i class="fa fa-pinterest"></i></a>
-                                    <a href="#"><i class="fa fa-tumblr"></i></a>
-                                 </div>
-                              </div>
-                           </div>
-                        </div> <!-- gl-preview -->
-                     </li>
-                  </ul> <!-- gallery -->
-                  <div class="load-more-block">
-                     <a href="#" class="footer-loadmore" data-link="#" data-offset="5" data-items-per-page="5">Load more</a>
-                     <span class="loading-spinner" ></span>
+                     <%end%>
+                  </ul>
+                  <div class="comment-form">
+                     <%= form_tag(comment_path, method: "post",remote:true) do %>
+                     <div class="form-group">
+                        <%= text_field_tag(:content , nil, :placeholder => "Comment...", :class =>"form-control", :required => true ) %>
+                        <%=hidden_field_tag 'post_id', p.id%>
+                     </div>
+                     <% end %>
                   </div>
-                  </section>
+
                </div>
-            </div> <!-- section -->
+            </div>
+         </div><!-- gl-preview -->
+      </li>
+      <%end%>
+   </ul> <!-- gallery -->
+</section>
+</div>
+</div> <!-- section -->

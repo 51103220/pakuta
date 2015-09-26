@@ -1,0 +1,5 @@
+<%= render "layouts/header" %>
+<% flash.each do |message_type, message| %>
+    	<div class="alert alert-<%= message_type %>"><%= message %></div>
+<% end %>
+<%= render :partial => 'layouts/edit', :locals => {:user => @user } %>

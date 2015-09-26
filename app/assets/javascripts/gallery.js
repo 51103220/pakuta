@@ -1,4 +1,3 @@
-//IMAGE REVIEW FUNCTIONALITY
 $(document).ready(function(){
 
 	$(".gallery .gl-item").on("click", function(event){
@@ -32,11 +31,11 @@ $(document).ready(function(){
 $(document).ready(function(){
 
 	$(".gallery .nextImg-btn").on("click", function() {
-		var activeImage = $(".gallery ul li").find("#review-img");
+		var activeImage = $("ul.gallery .gl-item").find("#review-img");
 		 //find the image with the ID "review-img" and save it in the variable
 		var activeParentDiv = $(activeImage).parent(); //save the parent element of the image with "review-img"-ID to this variable
 		$(".gallery .prevImg-btn").show(); //when the user clicks the first picture, the image is shown without the prev-button. This will make sure that the prev-button appears after the user clicks the "next image"-button
-		if ($(".gallery ul li").index($(activeParentDiv)) + 1 == $(".gallery ul li").length - 1 ) { //if the next picture is the last picture of the container, then hide the "next image" button.
+		if ($("ul.gallery .gl-item").index($(activeParentDiv)) + 1 == $("ul.gallery .gl-item").length-1) { //if the next picture is the last picture of the container, then hide the "next image" button.
 			$(".gallery .nextImg-btn").hide();
 			$(".gallery .prevImg-btn").show();
 		}
@@ -47,10 +46,10 @@ $(document).ready(function(){
 	});
 
 	$(".gallery .prevImg-btn").on("click", function() { //Same things happen in this section that happen in the above one, just in reverse.
-		var activeImage = $(".gallery ul li").find("#review-img");
+		var activeImage = $("ul.gallery .gl-item").find("#review-img");
 		var activeParentDiv = $(activeImage).parent();
-		$("gallery .nextImg-btn").show(); 
-		if($(".gallery ul li").index($(activeParentDiv)) - 1 == 0) { //if the next picture is the first picture of the container, then hide the "previous image" button.
+		$(".gallery .nextImg-btn").show(); 
+		if($("ul.gallery .gl-item").index($(activeParentDiv)) - 1 == 0) { //if the next picture is the first picture of the container, then hide the "previous image" button.
 			$(".gallery .prevImg-btn").hide();
 			$(".gallery .nextImg-btn").show();
 		}

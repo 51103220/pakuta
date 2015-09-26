@@ -1,0 +1,32 @@
+<% content_for :title do %>
+ 		Pakuta | Update
+	<% end %>
+<div class="section-group pakuta">
+	<div class="section">
+		<section>
+			<div class="container">
+				<div class="row">
+					<div class="col-md-12">
+						<%= form_for(user) do |f| %>
+						<%= render :partial => 'layouts/error_messages', :locals => {:user => user } %>
+						<div class="form-group">
+						<%= f.label :name %>
+						<%= f.text_field :name,:value =>"", :placeholder => "Pick a unique name again",:class =>"form-control" %>
+						</div>
+						<div class="form-group">
+						<%= f.label :real_name %>
+						<%= f.text_field :real_name,:value =>"", :placeholder => "What is your real name?",:class =>"form-control" %>
+						</div>
+						<div class="form-group">
+							<%= f.label :avatar_url %>
+							<%= f.text_field :avatar_link,:value =>"", :placeholder => "Paste you avatar image link here",:class =>"form-control" %>
+  							<%= f.file_field :avatar_url,:placeholder => "Upload your avatar image", :class =>"form-control" %>
+  						</div>
+						<%= f.submit "Update !", class: "btn btn-primary dedo-btn" %>
+						<% end %>
+					</div>
+				</div>
+			</div>
+		</section>
+	</div>
+</div>

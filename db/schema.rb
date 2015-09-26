@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150918192832) do
+ActiveRecord::Schema.define(version: 20150919181702) do
 
   create_table "comments", force: :cascade do |t|
     t.integer  "post_id",    limit: 4
@@ -29,7 +29,7 @@ ActiveRecord::Schema.define(version: 20150918192832) do
   end
 
   create_table "hash_tags", force: :cascade do |t|
-    t.string   "hash",       limit: 255
+    t.string   "tag",        limit: 255
     t.integer  "post_id",    limit: 4
     t.datetime "created_at",             null: false
     t.datetime "updated_at",             null: false

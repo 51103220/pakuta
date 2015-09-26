@@ -1,0 +1,38 @@
+<div class="section st-invert st-black">
+   <section>
+      <div class="container container-800">
+         <div class="comments cm-invert">
+            <h3 class="cm-block-title"><%=  pluralize(p.comments(p.id).length, "Comment")%></h3>
+            <ul id ="comments_list_<%=p.id%>">
+               <% p.comments(p.id).each do |c| %>
+               <li>
+                  <div class="cm-item">
+                     <figure>
+                        <%= image_tag(c.commentator(c.user_id).avatar_url, :alt => c.commentator(c.user_id).name) %>
+                     </figure>
+                     <div class="cm-body">
+                        <div class="cm-title-line">
+
+                           <span class="cm-title"><%= link_to c.commentator(c.user_id).name, controller: 'users', action: 'show' , name:c.commentator(c.user_id).name%></span>
+                           <time datetime="2014-01-27"><%=c.created_at%></time>
+                        </div>
+                        <div class="cm-content">
+                           <p><%=c.content%></p>
+                        </div>
+                     </div>
+                  </div>
+               </li>
+               <%end%>
+            </ul>
+         </div>
+         <div class="comment-form">
+            <%= form_tag(comment_path, method: "post",remote:true) do %>
+            <div class="form-group">
+               <%= text_field_tag(:content , nil, :placeholder => "Comment...", :class =>"form-control", :required => true ) %>
+               <%=hidden_field_tag 'post_id', p.id%>
+            </div>
+            <% end %>
+         </div>
+      </div> <!-- container -->
+   </section>
+</div> <!-- section -->

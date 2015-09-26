@@ -1,0 +1,16 @@
+<div class="section single-work st-invert">
+	<section>
+		<div class="container container-800">
+			<div class="col-md-12">
+				<%= form_tag(upload_path, method: "post", multipart: true) do %>
+				<div class="form-group">
+					<%= text_area_tag(:caption,nil, :placeholder => "Upload your pakuta", :class =>"form-control") %>
+				</div>
+				<%=file_field_tag :img_url, accept: 'image/png,image/gif,image/jpeg' %>
+				<%= submit_tag("Post", :class =>"btn btn-primary dedo-btn" ) %>
+				<% end %>
+			</div>
+		</div>
+	</section>
+
+</div>
