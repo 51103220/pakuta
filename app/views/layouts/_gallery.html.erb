@@ -1,7 +1,8 @@
 <div class="section gallery st-invert no-padding">
-   <div class="closeImg-btn"></div>
-   <img class="nextImg-btn" src="https://cdn1.iconfinder.com/data/icons/fs-icons-ubuntu-by-franksouza-/512/go-next.png" />
-   <img class="prevImg-btn" src="https://cdn1.iconfinder.com/data/icons/fs-icons-ubuntu-by-franksouza-/512/go-next.png" />
+   <div class="container-fluid closeImg-btn"></div>
+   <a href="#" class="close-button"><span class="glyphicon glyphicon-remove"></span></a>
+   <%= image_tag("purple-next.png", :alt => user.name, :class =>"nextImg-btn") %>
+   <%= image_tag("purple-next.png", :alt => user.name, :class =>"prevImg-btn") %>
    <div class="container container-800">
       <section>
          <ul id="gallery-w-preview" class="gallery gl-cols-4 gl-fixed-items">
@@ -17,19 +18,34 @@
                   </figcaption>
                </figure>
                <% end %>
+               
                <div class="container gl-preview" data-category="people">
-
-                  <a href="#" class="glp-close"></a>
+                  <div class="gl-preview-wrapper">
                   <div class="row gl-preview-container">
-                     <div class="col-sm-8">
+                     <div class="col-sm-8 pic-div">
                         <figure class="main-pic">
                           <%= image_tag(p.img_url, :alt => user.name) %>
                        </figure>
                     </div>
                     <div class="col-sm-4 lg-preview-descr">
-                     <h4><%=user.name%></h4>
+                     <div class="descr-head">
+                           <ul>
+                              <li>
+                              <figure class="poster-avatar">
+                                <%= image_tag(user.avatar_url, :alt => user.name,:class => 'img-circle') %>
+                             </figure>
+                             </li>
+                             <li class="user-name">
+                              <%= link_to user.name, {:controller => 'users', :action => 'show' },:name => user.name%>  
+                              </li>  
+                           </ul>
+                           <div class="clearfix">
+                           </div>
                      <p><%=p.created_at%></p>
+                     </div>
                      <h6><%=p.caption%></h6>
+                     
+                     <div class ="scrollable-comments">
                      <ul id ="comments_list_<%=p.id%>">
                         <% p.comments(p.id).each do |c| %>
                         <li>
@@ -40,8 +56,9 @@
 
                              <div class="cm-body">
                                  <div class="cm-title-line">
+                                  <span class="cm-title">
                                     <%= link_to c.commentator(c.user_id).name, controller: 'users', action: 'show' , name:c.commentator(c.user_id).name%>    
-                                    <time datetime="2014-01-27"><%=c.created_at%></time>
+                                   </span>
                                  </div>
                                  <div class="cm-content">
                                     <p><%=c.content%></p>
@@ -51,6 +68,7 @@
                      </li>
                      <%end%>
                   </ul>
+                  </div>
                   <div class="comment-form">
                      <%= form_tag(comment_path, method: "post",remote:true) do %>
                      <div class="form-group">
@@ -62,7 +80,9 @@
 
                </div>
             </div>
+            </div>
          </div><!-- gl-preview -->
+         
       </li>
       <%end%>
    </ul> <!-- gallery -->

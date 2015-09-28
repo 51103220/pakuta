@@ -4663,7 +4663,7 @@ blockquote footer { font-size: 12px; }
 
 /* ======================== Top main menu ======================== */
 @media (min-width: 992px) { .top-menu.tm-fixed { min-height: 100px; }
-  .top-menu.tm-fixed > header { position: fixed; top: 0; left: 0; width: 100%; height: 80px; margin-top: -20px; z-index: 9999; background-color: white; box-shadow: 0px 0px 4px 0px rgba(0, 0, 0, 0.4); transition: all 0.3s ease; } }
+  .top-menu.tm-fixed > header { position: fixed; top: 0; left: 0; width: 100%; height: 80px; margin-top: -20px; z-index: 9; background-color: white; box-shadow: 0px 0px 4px 0px rgba(0, 0, 0, 0.4); transition: all 0.3s ease; } }
 .top-menu .tm-logo { padding-top: 25px; padding-bottom: 25px; }
 .top-menu .tm-site-descr { margin-top: 7px; margin-bottom: 0; font-size: 12px; }
 .top-menu .tm-menu nav:before, .top-menu .tm-menu nav:after { content: " "; display: table; }
@@ -4721,7 +4721,7 @@ ul.gallety-filters > li.gf-underline { position: absolute; bottom: 0; left: 0; w
 .gallery .gl-item .gl-preview { display: none; }
 /*.gallery .gl-item .gl-preview { position: relative; width: 100% !important; background-color: #1a1a1a; }*/
 .gallery .gl-item .gl-preview .glp-arrow { display: block; position: absolute; z-index: 1; top: -60px; left: 12.5%; margin-left: -30px; width: 0; height: 0; border: 30px solid transparent; border-bottom-color: #1a1a1a; }
-.gallery .gl-item .gl-preview .glp-close { display: block; position: absolute; z-index: 1; top: 15px; right: 25px; width: 24px; height: 30px; line-height: 30px; font-size: 45px; color: #8e9095; font-family: 'ElegantIcons'; }
+.gallery .gl-item .gl-preview .glp-close { display: block; position: absolute; z-index: 1; top: 15px; right: 25px; width: 20px; height: 20px; line-height: 30px; font-size: 25px; color: #8e9095; font-family: 'ElegantIcons'; }
 .gallery .gl-item .gl-preview .glp-close:before { content: "\4d"; }
 .gallery .gl-item .gl-preview .glp-zoom { display: block; position: absolute; z-index: 1; top: 0; right: 0; width: 40px; height: 40px; line-height: 40px; font-size: 18px; background-color: #444649; color: #8e9095; font-family: 'ElegantIcons'; }
 .gallery .gl-item .gl-preview .glp-zoom:before { content: "\54"; }

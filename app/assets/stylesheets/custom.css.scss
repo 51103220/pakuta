@@ -1,6 +1,15 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
-
+html, body {
+  overflow-x: hidden;
+}
+p { word-break: break-all; }
+.form-group {
+    margin-bottom: 0px !important;
+}
+body {
+  position: relative
+}
 #header.top-menu {
 	border-bottom : 1px solid #edeeee;
 }
@@ -17,8 +26,8 @@
 	padding-bottom: 0px !important;
 }
 .st-invert .comment-form .form-control {
-	background-color: #edeeee !important;
-    border: 1px solid #000 !important;
+	background-color: #fff !important;
+    border-top: 1px solid #eeefef !important;
     color: #000 !important;
 }
 .container-800 {
@@ -116,4 +125,17 @@ input[placeholder]:focus {
     &:hover {
     	background-color: #000 !important;
     }
+}
+::-webkit-scrollbar {
+    width: 12px;
+}
+ 
+::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3); 
+    border-radius: 10px;
+}
+ 
+::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.5); 
 }
