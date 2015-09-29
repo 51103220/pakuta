@@ -3,14 +3,14 @@
    <a href="#" class="close-button"><span class="glyphicon glyphicon-remove"></span></a>
    <%= image_tag("purple-next.png", :alt => user.name, :class =>"nextImg-btn") %>
    <%= image_tag("purple-next.png", :alt => user.name, :class =>"prevImg-btn") %>
-   <div class="container container-800">
+   <div class="photos-list container container-800">
       <section>
          <ul id="gallery-w-preview" class="gallery gl-cols-4 gl-fixed-items">
             <% user.posts(user.id).each do |p| %>
             <li class="gl-item gl-fixed-ratio-item gl-loading" data-category="people">
                <%= link_to "#", :remote => true do %>
                <figure>
-                  <%= image_tag(p.img_url, :alt => user.name) %>
+                  <%= image_tag(p.img_url, :alt => user.name,:class => "img-thumbnail") %>
                   <figcaption>
                      <div class="middle"><div class="middle-inner">
                         <p class="gl-item-category"><%=  pluralize(p.comments(p.id).length, "Comment")%></p>
@@ -43,7 +43,7 @@
                            </div>
                      <p><%=p.created_at%></p>
                      </div>
-                     <h6><%=p.caption%></h6>
+                     <p class="caption"><%=caption(p.caption)%></p>
                      
                      <div class ="scrollable-comments">
                      <ul id ="comments_list_<%=p.id%>">
@@ -61,7 +61,7 @@
                                    </span>
                                  </div>
                                  <div class="cm-content">
-                                    <p><%=c.content%></p>
+                                    <p><%=caption(c.content)%></p>
                                  </div>
                               </div>
                         </div>

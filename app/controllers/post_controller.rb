@@ -16,12 +16,12 @@ class PostController < ApplicationController
 				post.caption = params[:caption]
 				post.img_url = "/uploads/" + img_url
 				if post.save
-					hash_tag_pattern = /#(?<tag>[^#]+)/i
+					hash_tag_pattern = /#(?<tag>[^#\s]+)/i
 					tags = post.caption.scan(hash_tag_pattern)
 					tags.each do |t|
 						ht = HashTag.new
 						ht.post_id = post.id
-						ht.tag = t
+						ht.tag = t[0]
 						if !ht.save
 							flash[:success] = "Please use beautiful hash tags"
 	    					redirect_to controller: "home_page", action: "home"

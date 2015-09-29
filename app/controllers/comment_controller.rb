@@ -12,6 +12,7 @@ class CommentController < ApplicationController
 	    		@comment.user_id = user.id
 	    		@comment.post_id = params[:post_id]
 	    		@comment.content = params[:content]
+	    		@content_html = caption(@comment.content)
 	    		if @comment.save
 	    			respond_to do |format|
   						format.js

@@ -1,0 +1,84 @@
+/* latin-ext */
+@font-face {
+  font-family: 'Gruppo';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Gruppo'), url(http://fonts.gstatic.com/s/gruppo/v7/Z8_XBnSobhWOH0HWw-L2BPesZW2xOQ-xsNqO47m55DA.woff2) format('woff2');
+  unicode-range: U+0100-024F, U+1E00-1EFF, U+20A0-20AB, U+20AD-20CF, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Gruppo';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Gruppo'), url(http://fonts.gstatic.com/s/gruppo/v7/EoL765IZSvUoJyAsw4h7ow.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
+}
+/* latin */
+@font-face {
+  font-family: 'Crafty Girls';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Crafty Girls'), local('CraftyGirls'), url(http://fonts.gstatic.com/s/craftygirls/v5/0Sv8UWFFdhQmesHL32H8o-gdm0LZdjqr5-oayXSOefg.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Black Ops One';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Black Ops One'), local('BlackOpsOne-Regular'), url(http://fonts.gstatic.com/s/blackopsone/v7/2XW-DmDsGbDLE372KrMW1X1PgMwFt2V-WJ2uOZ4WXLU.woff2) format('woff2');
+  unicode-range: U+0100-024F, U+1E00-1EFF, U+20A0-20AB, U+20AD-20CF, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Black Ops One';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Black Ops One'), local('BlackOpsOne-Regular'), url(http://fonts.gstatic.com/s/blackopsone/v7/2XW-DmDsGbDLE372KrMW1TxObtw73-qQgbr7Be51v5c.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
+}
+.pakuta .slogan {
+	text-align:center;
+	font-family: Gruppo;
+	span {
+		font-family: Black Ops One;
+		color:#0E0202 !important;
+	}
+}
+.pakuta {
+	.login_form,.signup_form{
+		.form-control{
+	        border: 0px  !important;
+	        border-radius:0px !important;
+	               
+    	}
+	    .dedo-btn {
+			margin-top:10px;
+			margin-bottom:5px;
+	        border: 1px solid #fff  !important;
+	        color:#714C74 !important;
+	        background-color: #fff !important;
+	        &:hover {
+		        color:#714C74 !important;
+		        background-color: #ECE4E4  !important;
+	       	}
+    	}
+	}
+	.form-content {
+		font-family: Gruppo;
+		padding-top:10px;
+		color:#fff !important;
+		p {
+			color:#fff !important;
+		}
+		a{
+			color:#FFE000 !important;
+			&:hover {
+				color:#714C74  !important;
+			}
+		}
+		background-color:rgba(0,0,0,0.4);
+		border-radius:4px;
+	}
+}

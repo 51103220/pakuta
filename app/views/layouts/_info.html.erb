@@ -3,17 +3,23 @@
          </div>
          <div class="section">
             <section>
-               <div class="container container-800">
+               <div class="gallery-info container container-800">
                   <div class="row services-block">
                      <div class="col-md-6" data-animate="fadeInDown">
                         <div class="services-item">
-                           <%= image_tag user.avatar_url, alt: "#{user.name}" %>
+                           <%= image_tag(user.avatar_url,:alt => "#{user.name}",:class =>"img-thumbnail")%>
                         </div>
                      </div>
                      <div class="col-md-6" data-animate="fadeInDown">
                         <div class="services-item">
-                           <h5><%=user.name%></h5>
-                           <p><%= user.real_name%></p>
+                           <h1><%=user.name%></h1>
+                           <h4><%= user.real_name%></h4>
+                           <div class="details">
+                              <span>100 Posts |</span>
+                              <span>22 Follower |</span>
+                              <span>32 Following</span>
+                           </div>
+
                            <%=link_to "Edit your profile", controller:'users', action: 'edit' , name: user.name %></li>
                         </div>
                      </div>

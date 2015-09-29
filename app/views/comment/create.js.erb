@@ -7,7 +7,7 @@ content = "<li>"+"<div class='cm-item'>"+"<figure>"+
 		  "<time datetime='pakuta'><%=@comment.created_at%></time>"+
 		  "</div>"+
 		  "<div class='cm-content'>"+
-		  "<p><%=@comment.content%></p>"+
+		  "<p><%=@content_html%></p>"+
 		  "</div></div></li>";
 $("#comments_list_<%=@comment.post_id%>").append(content);
 $(".comment-form form #content").val(''); 
