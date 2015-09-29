@@ -1,11 +1,20 @@
-== PAKUTA PHOTOS SHARING NETWORK
-
-PAKUTA is a mini instagram app developed in Rails 4 with Mysql.
-
-FEATURE:
+== PAKUTA SOCIAL NETWORK
+   PAKUTA is a web application for a photo social network developed in Rails 4 with Mysql.
+== INSTALLATION: All you need is
+* As always configure database		
+* rake db:migrate
+== MAIN FEATURE:
 
 * Login
+* Logout
+* Signup
 * Upload Photos
+* Comment
+* Comment with hashtags
+* Search with hashtags
 
+== UPCOMMING FEATURE:
 
-
+* Real Time notification
+* Follow
+* Crop|Edit|Add Effect Photo
