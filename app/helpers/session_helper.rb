@@ -46,7 +46,7 @@ module SessionHelper
   		hash_tag_pattern = /#(?<tag>[^#\s]+)/i
   		tags = caption.scan(hash_tag_pattern)
   		tags.each do |t|
-  			link = "<a href='#'>##{t[0]} </a>".html_safe
+  			link = "<a href='/explore?tag=#{t[0]}'>##{t[0]} </a>".html_safe
   			caption = caption.gsub("##{t[0]}",link)
   		end
   		caption.html_safe

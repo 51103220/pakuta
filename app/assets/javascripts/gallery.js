@@ -17,10 +17,10 @@ $(document).ready(function(){
 		$(".gallery .prevImg-btn").show();
 		
 
-		if($(".gallery ul li").index($(this))== 0) { //if the clicked picture is the first picture, then hide the "prev image" button.
+		if($("ul.gallery .gl-item").index($(this))== 0) { //if the clicked picture is the first picture, then hide the "prev image" button.
 			$(".gallery .prevImg-btn").hide();
 	}
-		if($(".gallery ul li").index($(this)) == $(".gallery ul li").length - 1 ) { //if the clicked picture is the last picture, then hide the "next image" button.
+		if($("ul.gallery .gl-item").index($(this)) == $("ul.gallery .gl-item").length - 1 ) { //if the clicked picture is the last picture, then hide the "next image" button.
 			$(".gallery .nextImg-btn").hide();
 	}
 		$(this).find('.gl-preview').attr("id", "review-img"); //add the review-img -Id to the clicked image (makes the image larger) 
@@ -32,6 +32,15 @@ $(document).ready(function(){
 		$(".close-button").click();
 	});
 	$(".cm-title a").click(function(){
+		window.location.replace($(this).attr('href'));
+	});
+	$(".user-name a").click(function(){
+		window.location.replace($(this).attr('href'));
+	});
+	$(".cm-content a").click(function(){
+		window.location.replace($(this).attr('href'));
+	});
+	$(".caption  a").click(function(){
 		window.location.replace($(this).attr('href'));
 	});
 });

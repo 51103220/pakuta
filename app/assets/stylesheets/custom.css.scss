@@ -109,10 +109,17 @@ footer {
  /* ======================== UPLOAD FORM ======================== */
 
  .upload-form {
+     .row-form {
+         background-color:#524848  !important;
+    }
+    .owner{
+      margin-bottom:20px !important;
+    }
     font-family:Groupo;
-    background-color:#714C74 !important;
-    border:1px solid #714C74 !important;
-    padding-top:20px !important;
+    background-color:#fff important;
+    border:1px solid #edeeee !important;
+    border-right:0px !important;  
+    padding-top:0px !important;
     box-shadow: 4px 4px 4px 0px rgba(0, 0, 0, 0.4);
     border-radius:10px;
     form {
@@ -141,14 +148,18 @@ footer {
             margin-bottom:10px;
         }
     }
+   
 
+ }
+ .upload-form-invert {
+    background-color:#fff;
  }
 
  
 /* ======================== Edit Form ======================== */
 .edit_user {
     padding: 10px 10px 10px 10px ;
-    background-color:#714C74;
+    background-color:#524848 ;
     border:1px solid #714C74;
     border-top:10px solid #444040   !important;
     box-shadow: 4px 4px 4px 0px rgba(0, 0, 0, 0.4);

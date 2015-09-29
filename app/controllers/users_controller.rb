@@ -10,7 +10,8 @@ class UsersController < ApplicationController
 		@user = User.find_by(name: params[:name])
 	end
 	def create
-	    @user = User.new(user_params)    
+	    @user = User.new(user_params)
+	    @user.avatar_url =  "/uploads/default-profile.jpg"
 	    if @user.save
 	    	log_in @user
 	    	flash[:success] = "Now You are a Pakuta !!!"

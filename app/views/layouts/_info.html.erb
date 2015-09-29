@@ -19,8 +19,9 @@
                               <span>22 Follower |</span>
                               <span>32 Following</span>
                            </div>
-
-                           <%=link_to "Edit your profile", controller:'users', action: 'edit' , name: user.name %></li>
+                           <% if user.id == current_user.id %>
+                              <%=link_to "Edit your profile", controller:'users', action: 'edit' , name: user.name %></li>
+                           <%end%>
                         </div>
                      </div>
                   </div>

@@ -1,6 +1,13 @@
-<div class="section single-work st-invert">
+<div class="section single-work st-invert upload-form-invert">
 	<section>
 		<div class="container container-800 upload-form">
+					<div class="owner">
+                     	<figure>
+                       		 <%= image_tag(current_user.avatar_url, :alt => current_user.name) %>
+                     	</figure>
+                             <%= link_to current_user.name, controller: 'users', action: 'show' , name:current_user.name %>                      
+             			</div>
+				<div class ="row row-form">
 				<div class="col-md-12">
 
 				<%= form_tag(upload_path, method: "post", multipart: true) do %>
@@ -12,6 +19,7 @@
 				</div>
 				<%= submit_tag("Post", :class =>"btn btn-primary dedo-btn" ) %>
 				<% end %>
+			</div>
 			</div>
 		</div>
 	</section>
