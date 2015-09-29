@@ -15,9 +15,8 @@
                            <h1 class="big-name"><%=user.name%></h1>
                            <h4><%= user.real_name%></h4>
                            <div class="details">
-                              <span>100 Posts |</span>
-                              <span>22 Follower |</span>
-                              <span>32 Following</span>
+                              <span><%= pluralize(user.posts(user.id).length,"Post")%></span>
+                           
                            </div>
                            <% if user.id == current_user.id %>
                               <%=link_to "Edit your profile", controller:'users', action: 'edit' , name: user.name %></li>

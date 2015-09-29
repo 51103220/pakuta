@@ -8,7 +8,7 @@
                         <%= image_tag(user.avatar_url, :alt => user.name) %>
                      </figure>
                        <%= link_to p.poster(p.user_id).name, controller: 'users', action: 'show' , name:p.poster(p.user_id).name %>
-                     <p class="time"><%=timestamp p.created_at%></p>                              
+                     <p class="time"><%=timestamp p.created_at%> ago</p>                              
              </div>
             <figure class="image-fit">
                      <%= image_tag(p.img_url, :alt => user.name) %>

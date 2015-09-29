@@ -33,13 +33,19 @@ module SessionHelper
 		cookies.permanent[:remember_token] = user.remember_token
 	end
 	def timestamp created_at
-  		t = ((Time.now - created_at.to_datetime)/3600)
-  		if t < 1
-  			t = (t*60).ceil.to_s + " minutes ago"
-  		elsif t.floor == 1
-  			t = t.floor.to_s + " hour ago"
+  		t = ((Time.now - created_at.to_datetime))
+  		if t < 60
+  			t = pluralize((t).ceil, "second")
+  		elsif t >= 60 and t < 60*60 
+  			t = pluralize((t/60).ceil, "minute")
+  		elsif t >= 60*60 and t < 24*60*60
+  			t = pluralize((t/(60*60)).ceil, "hour")
+  		elsif t>=24*60*60 and t < 30*24*60*60
+  			t = pluralize((t/(24*60*60)).ceil, "day")
+  		elsif t>= 30*24*60*60 and t < 365*24*30*60*60
+  			t = pluralize((t/(30*24*60*60)).ceil, "month")
   		else
-  			t = t.floor.to_s + " hours ago"
+  			t = pluralize((t/(365*24*30*60*60)).ceil, "year")
   		end
   	end
   	def caption(caption)
