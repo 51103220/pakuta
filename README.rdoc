@@ -19,5 +19,6 @@
 * Real Time notification
 * Follow
 * Crop|Edit|Add Effect Photo
+* Việt Hóa
 == BUGS
 * Error with utf8 
