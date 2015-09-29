@@ -1,7 +1,7 @@
 <% user.posts(user.id).each do |p| %>
   <div class="section single-work st-invert">
    <section>
-   <div class="container container-800">
+   <div class="container container-800 single-post">
          <article>
              <div class="owner">
                      <figure>
@@ -16,22 +16,11 @@
             <div class="row sw-description">
                <div class="col-md-12">
                   <p><%=caption(p.caption)%></p>
-
-                  <div class="mb-social">
-                     <h6>SHARE</h6> 
-                     <a href="#"><i class="fa fa-twitter"></i></a>
-                     <a href="#"><i class="fa fa-facebook"></i></a>
-                     <a href="#"><i class="fa fa-google-plus"></i></a>
-                     <a href="#"><i class="fa fa-instagram"></i></a>
-                     <a href="#"><i class="fa fa-pinterest"></i></a>
-                     <a href="#"><i class="fa fa-tumblr"></i></a>
-                  </div>
-
                </div>
             </div>
          </article>
+         <%= render :partial => 'comment/comment', :locals => {:p => p } %>
       </div>
    </section>
 </div> <!-- section -->
-<%= render :partial => 'comment/comment', :locals => {:p => p } %>
 <%end%>

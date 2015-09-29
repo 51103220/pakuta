@@ -6,8 +6,10 @@
 	<% flash.each do |message_type, message| %>
         <div class="alert alert-<%= message_type %>"><%= message %></div>
       <% end %>
+    <div class = "main-page">
     <%= render 'layouts/upload_form' %>
 	<%= render :partial => 'layouts/post', :locals => {:user => @user} %>
+	</div>
 <% else %>
 	<% content_for :title do %>
  		Pakuta | Login

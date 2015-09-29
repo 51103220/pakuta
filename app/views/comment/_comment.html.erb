@@ -1,8 +1,5 @@
-<div class="section st-invert st-black">
-   <section>
-      <div class="container container-800">
+      <div class="container container-800 single-comment">
          <div class="comments cm-invert">
-            <h3 class="cm-block-title"><%=  pluralize(p.comments(p.id).length, "Comment")%></h3>
             <ul id ="comments_list_<%=p.id%>">
                <% p.comments(p.id).each do |c| %>
                <li>
@@ -34,5 +31,3 @@
             <% end %>
          </div>
       </div> <!-- container -->
-   </section>
-</div> <!-- section -->

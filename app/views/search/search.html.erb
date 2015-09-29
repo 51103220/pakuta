@@ -1,0 +1,11 @@
+
+	<% content_for :title do %>
+ 		Pakuta <%=@tag%>
+	<% end %>
+	<%= render "layouts/header" %>
+	<% flash.each do |message_type, message| %>
+    	<div class="alert alert-<%= message_type %>"><%= message %></div>
+	<% end %>
+	<div class ="main-page">
+		<%= render :partial => 'layouts/search', :locals => {:posts => @posts, :tag => @tag} %>
+	</div>

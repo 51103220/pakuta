@@ -15,6 +15,9 @@ Rails.application.routes.draw do
     delete 'logout'  => 'session#destroy'
     post 'upload' => 'post#create'
     post 'comment' => 'comment#create'
+    get 'explore' => 'search#search'
+    
+
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 

@@ -1,25 +1,25 @@
-<div id="header" class="top-menu tm-fixonscroll">
+<div id="header" class="top-menu tm-fixonscroll tm-fixed">
    <header class="shadow-down">
       <div class="container">
          <div class="row">
-            <div class="col-md-2 tm-logo">
-               <a href="/"><%= image_tag("logo_white.png", :alt => "Pakuta") %></a>
-               <p class="tm-site-descr">Set you pictures on fire</p>
+            <div class="col-md-4 tm-logo">
+               <a href="/"><h1>Pakuta</h1></a>
+               
             </div>
-            <div class="col-md-2 tm-menu">
+            <div class="col-md-4 tm-menu">
                <div class="comment-form">
-                  <form role="form" class="contact-form">
+                  <%= form_tag({:controller => "search", :action => "search"},{:method=>"get",:class => "contact-form"}) do %>
                      <div class="form-group">
-                     <input class="form-control" type="text" id="input_message" placeholder="Search">
+                       <%= text_field_tag(:tag , nil, :placeholder => "Search", :class =>"form-control", :required => true ) %>
                      </div>
-                  </form>
+                  <% end %>
                </div>
             </div>
-            <div class="col-md-8 tm-menu">
+            <div class="col-md-4 tm-menu">
                <nav>
                   <ul class="top-main-menu mtmenu">
                      <% if logged_in? %>
-                        <li><%=link_to "Profile",controller: 'users', action: 'show' , name:current_user.name%></li>
+                        <li><%=link_to current_user.name,controller: 'users', action: 'show' , name:current_user.name%></li>
                         <li><%= link_to "Log out", logout_path, method: "delete" %></li>
                      <% else %>
                         <li><%=link_to "Login", login_path%></li>

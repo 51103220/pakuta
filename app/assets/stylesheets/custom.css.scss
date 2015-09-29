@@ -1,5 +1,7 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
+/* ======================== Font ======================== */
+
 /* latin-ext */
 @font-face {
   font-family: 'Gruppo';
@@ -16,6 +18,24 @@
   src: local('Gruppo'), url(http://fonts.gstatic.com/s/gruppo/v7/EoL765IZSvUoJyAsw4h7ow.woff2) format('woff2');
   unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
 }
+/* latin-ext */
+@font-face {
+  font-family: 'Black Ops One';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Black Ops One'), local('BlackOpsOne-Regular'), url(http://fonts.gstatic.com/s/blackopsone/v7/2XW-DmDsGbDLE372KrMW1X1PgMwFt2V-WJ2uOZ4WXLU.woff2) format('woff2');
+  unicode-range: U+0100-024F, U+1E00-1EFF, U+20A0-20AB, U+20AD-20CF, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Black Ops One';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Black Ops One'), local('BlackOpsOne-Regular'), url(http://fonts.gstatic.com/s/blackopsone/v7/2XW-DmDsGbDLE372KrMW1TxObtw73-qQgbr7Be51v5c.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
+}
+/* ======================== Footer ======================== */
+
 footer {
     font-family: Gruppo;
     background-color:#714C74!important;
@@ -32,11 +52,106 @@ footer {
         }
     }
 }
+/* ======================== Header ======================== */
+
+.tm-fixed {
+    .comment-form {
+        display:none !important;
+    }
+    .tm-logo{
+        h1 {font-family:Black Ops One;
+            color:#714C74 !important;
+            text-align:left !important;
+            padding-top: 10px !important;
+           }
+    }
+    .contact-form {
+        font-family:Gruppo;
+        .form-control{
+            border: 1px solid #edeeee !important;
+            border-radius: 10px;
+            background-color:#FAFAFA !important;
+            color:#714C74 !important;
+            height:30px;
+        }
+        margin-bottom:10px !important;
+    }
+    .comment-form {
+        margin-top:35px !important;
+    }
+    nav {
+         font-family:Gruppo;
+    }
+}
+/* ======================== Media ======================== */
+
+ @media only screen and (min-width : 768px) {
+    .tm-fixed {
+        .comment-form {
+            display:block  !important;
+        }
+    }
+ }
+ @media only screen and (min-width : 992px){
+     .tm-fixed {
+        .comment-form {
+            display:block  !important;
+        }
+    }
+ }
+ @media only screen and (min-width : 1200px){
+     .tm-fixed {
+        .comment-form {
+            display:block  !important;
+        }
+    }
+ }
+ /* ======================== UPLOAD FORM ======================== */
+
+ .upload-form {
+    font-family:Groupo;
+    background-color:#714C74 !important;
+    border:1px solid #714C74 !important;
+    padding-top:20px !important;
+    box-shadow: 4px 4px 4px 0px rgba(0, 0, 0, 0.4);
+    border-radius:10px;
+    form {
+        .form-control{
+            background-color:transparent !important;
+            border: 0px  !important;
+            border-radius:0px !important;
+            color:#fff !important;
+                    
+        }
+        textarea::-webkit-input-placeholder { /* WebKit, Blink, Edge */
+            color:    #D6D8DE  !important;
+        }
+        .form-group {
+            color:#fff !important;
+
+        }
+        .dedo-btn {
+            border: 1px solid #fff  !important;
+            color:#714C74 !important;
+            background-color: #fff !important;
+            &:hover {
+            color:#714C74 !important;
+            background-color: #ECE4E4  !important;
+            }
+            margin-bottom:10px;
+        }
+    }
+
+ }
+
+ 
+/* ======================== Edit Form ======================== */
 .edit_user {
     padding: 10px 10px 10px 10px ;
     background-color:#714C74;
     border:1px solid #714C74;
-    box-shadow: 0px 0px 4px 0px rgba(0, 0, 0, 0.4);
+    border-top:10px solid #444040   !important;
+    box-shadow: 4px 4px 4px 0px rgba(0, 0, 0, 0.4);
     border-radius:10px;
     .form-control{
         border: 0px  !important;
@@ -61,11 +176,61 @@ footer {
     border:0px !important;
     padding-left:0 !important;
     padding-right:0 !important;
+    font-family:Groupo !important;
+}
+/* ======================== Posts ======================== */
+.single-post{
+   font-family:Groupo;
+   padding-left:0 !important;
+   padding-right:0 !important;
+   border-bottom:0px !important;
+   border-right:0px !important;
+   box-shadow: 4px 4px 4px 0px rgba(0, 0, 0, 0.4);
+   .owner,.sw-description{
+        padding-left:15px !important;
+        padding-right:15px !important;
+
+   }
+   .sw-description{
+        margin-top: 20px !important;
+   }
+}
+
+/* ======================== Comment ======================== */
+.single-comment{
+    background-color:transparent !important;
+    font-family:Groupo;
+    border-top: 0px !important;
+    border-right:0px !important;
+    border-left:0px !important;
+    ul li {
+            padding:5px 0px 2px !important;
+        }
+    }
+/* ======================== Search Result ======================== */
+.gallery-info{
+    .search-result{
+      text-align:center;
+      font-family:Black Ops One !important;
+    }
+    .big-name{
+       font-family:Black Ops One !important;
+    }
+    font-family:Groupo;
+}
+.gallery {
+     font-family:Groupo;
+
+}
+
+/* ======================== Body ======================== */
+.main-page {
+    margin-bottom: 50px;
 }
 html, body {
   overflow-x: hidden;
 }
-p { word-break: break-all; }
+p { word-break: break-word; }
 .form-group {
     margin-bottom: 0px !important;
 }

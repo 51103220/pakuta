@@ -1,0 +1,112 @@
+<div class="sections-group text-dark">
+   <div class="st-video-background">
+         </div>
+         <div class="section">
+            <section>
+               <div class="gallery-info container container-800">
+                  <div class="row services-block">
+                     <div class="col-md-12" data-animate="fadeInDown">
+                          <h1 class = "search-result">
+                            <% if posts.length == 0 %>
+                                Someone ate "<%=tag%>",Give up !
+                            <%else%>
+                                 <%= pluralize(posts.length,"result") %> found for "<%=tag%>"
+                            <%end%>
+                          </h1>
+                     </div>
+                  </div>
+               </div> <!-- container -->
+            </section>
+         </div> <!-- section -->
+</div><!-- sections-group -->
+<div class="section gallery st-invert no-padding">
+   <div class="container-fluid closeImg-btn"></div>
+   <a href="#" class="close-button"><span class="glyphicon glyphicon-remove"></span></a>
+   <%= image_tag("purple-next.png", :alt => "Next", :class =>"nextImg-btn") %>
+   <%= image_tag("purple-next.png", :alt => "Previous", :class =>"prevImg-btn") %>
+   <div class="photos-list container container-800">
+      <section>
+         <ul id="gallery-w-preview" class="gallery gl-cols-4 gl-fixed-items">
+            <% posts.each do |p| %>
+            <li class="gl-item gl-fixed-ratio-item gl-loading" data-category="people">
+               <%= link_to "#", :remote => true do %>
+               <figure>
+                  <%= image_tag(p.img_url, :alt => p.poster(p.user_id).name, :class => "img-thumbnail") %>
+                  <figcaption>
+                     <div class="middle"><div class="middle-inner">
+                        <p class="gl-item-category"><%=  pluralize(p.comments(p.id).length, "Comment")%></p>
+                     </div></div>
+                  </figcaption>
+               </figure>
+               <% end %>
+               
+               <div class="container gl-preview" data-category="people">
+                  <div class="gl-preview-wrapper">
+                  <div class="row gl-preview-container">
+                     <div class="col-sm-8 pic-div">
+                        <figure class="main-pic">
+                          <%= image_tag(p.img_url,:alt => p.poster(p.user_id).name) %>
+                       </figure>
+                    </div>
+                    <div class="col-sm-4 lg-preview-descr">
+                     <div class="descr-head">
+                           <ul>
+                              <li>
+                              <figure class="poster-avatar">
+                                <%= image_tag(p.poster(p.user_id).avatar_url, :alt => p.poster(p.user_id).name,:class => 'img-circle') %>
+                             </figure>
+                             </li>
+                             <li class="user-name">
+                              <%= link_to p.poster(p.user_id).name, controller: 'users', action: 'show', name: p.poster(p.user_id).name %>  
+                              </li>  
+                           </ul>
+                           <div class="clearfix">
+                           </div>
+                     <p><%=p.created_at%></p>
+                     </div>
+                     <p class="caption"><%=caption(p.caption)%></p>
+                     
+                     <div class ="scrollable-comments">
+                     <ul id ="comments_list_<%=p.id%>">
+                        <% p.comments(p.id).each do |c| %>
+                        <li>
+                          <div class="cm-item">                                   
+                             <figure>
+                                <%= image_tag(c.commentator(c.user_id).avatar_url, :alt => c.commentator(c.user_id).name) %>
+                             </figure>
+
+                             <div class="cm-body">
+                                 <div class="cm-title-line">
+                                  <span class="cm-title">
+                                    <%= link_to c.commentator(c.user_id).name, controller: 'users', action: 'show' , name:c.commentator(c.user_id).name%>    
+                                   </span>
+                                 </div>
+                                 <div class="cm-content">
+                                    <p><%=caption(c.content)%></p>
+                                 </div>
+                              </div>
+                        </div>
+                     </li>
+                     <%end%>
+                  </ul>
+                  </div>
+                  <div class="comment-form">
+                     <%= form_tag(comment_path, method: "post",remote:true) do %>
+                     <div class="form-group">
+                        <%= text_field_tag(:content , nil, :placeholder => "Comment...", :class =>"form-control", :required => true ) %>
+                        <%=hidden_field_tag 'post_id', p.id%>
+                     </div>
+                     <% end %>
+                  </div>
+
+               </div>
+            </div>
+            </div>
+         </div><!-- gl-preview -->
+         
+      </li>
+      <%end%>
+   </ul> <!-- gallery -->
+</section>
+</div>
+</div> <!-- section -->

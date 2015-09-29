@@ -51,4 +51,12 @@ module SessionHelper
   		end
   		caption.html_safe
   	end
+  	def tag_search tag
+		post_ids = HashTag.where("tag LIKE ?", tag).pluck(:post_id)
+		posts = []
+		post_ids.each do |i|
+			posts << Post.find(i)
+		end
+		posts
+	end
 end
